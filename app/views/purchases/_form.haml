@@ -1,0 +1,28 @@
+- if !purchase.new? 
+  %ul.tabs
+    %li.active
+      %a{:href => "#!purchases"} Produit
+    %li
+      %a{:href => "#!suppliers"} Fournisseurs (#{purchase.suppliers.length})
+    %li
+      %a{:href => "#!suppliers"} Achats (#{purchase.purchases.length})
+    %li
+      %a{:href => "#!sales"} Ventes
+
+%form{:action => (purchase.new? ? "/purchases" : "/purchases/#{purchase.id}"), :method => 'post'}
+  =csrf_tag
+  %fieldset
+    .clearfix
+      %label{:for => "purchase[supplier]"} Fournisseur
+      .input
+        %select#purchaseSupplier{:name => "purchase[supplier_id]"}
+          %option 1
+          %option 2
+          %option 3
+          %option 4
+          %option 5
+
+    .actions
+      %input.btn.primary{:type => "submit", :value => "Submit"}
+        \ 
+        %button.btn{:type => "reset"} Cancel

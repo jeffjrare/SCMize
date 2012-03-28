@@ -1,0 +1,53 @@
+.content
+  .page-header
+    %h1
+      Créer un compte
+  .row
+    .span4
+      %h2 Simple et gratuit
+      %p Quelques secondes et vous aurez accès à votre compte de compagnie gratuit!
+    .span10
+
+      %form{:action => '/signup', :method => 'post'}
+        =csrf_tag
+        %fieldset
+          .clearfix
+            %label{:for => "account[name]"} Nom de la compagnie
+            .input
+              .input-prepend
+                %input#accountName.large{:name => "account[name]", :size => "50", :type => "text"}/
+              %span.help-block
+                Inscrivez la façon dont vous voulez que le nom de votre compagnie soit affiché  
+          .clearfix
+            %label{:for => "account[identifier]"} Identifiant de la compagnie
+            .input
+              .input-prepend
+                %input#accountIdentifier.large{:name => "account[identifier]", :size => "20", :type => "text"}/
+              %span.help-block
+                Choisissez un seul mot qui servira d'identifiant de compagnie                  
+          .clearfix
+            %label{:for => "account[mail]"} Votre courriel
+            .input
+              .input-prepend
+                %span.add-on @
+                %input#accountMail.large{:name => "account[mail]", :size => "50", :type => "text"}/
+              %span.help-block
+                %strong Note:
+                Un usager sera créé afin de pouvoir gérer votre compagnie
+          .clearfix
+            %label{:for => "account[password]"} Mot de passe
+            .input
+              .input-prepend
+                %input#accountPassword.medium{:name => "account[password]", :size => "15", :type => "password"}/
+              %span.help-block
+                %strong Note:
+                Minimum 5 caractères
+          .clearfix
+            %label{:for => "account[password_confirm]"} Mot de passe (Confirmez)
+            .input
+              .input-prepend
+                %input#accountassword.medium{:name => "account[password_confirm]", :size => "15", :type => "password"}/
+          .actions
+            %input.btn.primary{:type => "submit", :value => "Submit"}
+              \ 
+              %button.btn{:type => "reset"} Cancel

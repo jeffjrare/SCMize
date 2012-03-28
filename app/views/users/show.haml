@@ -1,0 +1,77 @@
+.content
+  .page-header
+    %h1
+      Mon compte
+      %small Connecté en tant que <strong>#{session[:user].mail}</strong>
+  .row
+    .span15
+      %h2 Mes informations personnelles sécurisées
+
+      %ul#user-nav.pills
+        %li.listing.active
+          %a{:href => "#mes-informations"} Mes informations
+        %li.parameters
+          %a{:href => "#resilliation"} Résilliation du compte
+
+      .user-account.tab
+        %form{:action => '/mon-compte', :method => 'post'}
+          %fieldset
+            .clearfix
+              %label{:for => "userMail"} Votre courriel
+              .input
+                .input-prepend
+                  %span.add-on @
+                  %input#userMail.large{:name => "user[mail]", :size => "50", :type => "text", :value => user.mail}/
+                %span.help-block
+                  %strong Note:
+                  Votre courriel sera votre identifiant pour vous connecter à votre compte.
+            .clearfix
+              %label{:for => "userName"} Surnom pour la communauté
+              .input
+                .input-prepend
+                  %input#userName.medium{:name => "user[name]", :size => "50", :type => "text", :value => user.username}/
+                %span.help-block
+                  %strong Note:
+                  Ce surnom sert à vous identifier au sein de la communauté. Vous n'avez en aucun cas à préciser votre vrai nom, sauf si désiré.
+            .clearfix
+              %label{:for => "userOldPassword"} Mot de passe actuel
+              .input
+                .input-prepend
+                  %input#userOldPassword.medium{:name => "user[old_password]", :size => "15", :type => "password"}/
+                %span.help-block
+                  %strong Note:
+                  Minimum 5 caractères
+            .clearfix
+              %label{:for => "userPassword"} Nouveau mot de passe
+              .input
+                .input-prepend
+                  %input#userPassword.medium{:name => "user[password]", :size => "15", :type => "password"}/
+                %span.help-block
+                  %strong Note:
+                  Minimum 5 caractères
+            .clearfix
+              %label{:for => "userPasswordConfirm"} Nouveau mot de passe (Confirmez)
+              .input
+                .input-prepend
+                  %input#userPasswordConfirm.medium{:name => "user[password_confirm]", :size => "15", :type => "password"}/
+            .actions
+              %input.btn.primary{:type => "submit", :value => "Submit"}
+                \ 
+                %button.btn{:type => "reset"} Cancel
+
+      .resiliate.tab
+        %p Si vous désirez vraiment fermer votre compte définitivement, avant tout si cela résulte d'un problème technique, inquiétudes ou quoi que ce soit d'autres, n'hésitez pas à <a href="/contact">nous contacter</a> afin de voir si nous pouvons vous aider!
+
+        %form{:action => '/mon-compte', :method => 'post'}
+          %fieldset
+            .clearfix
+              %label#optionsRadio
+              .input
+                %input{:name => "user[close]", :type => "checkbox", :value => "true"}
+                  %span Je demande à fermer immédiatement mon compte utilisateur et détruire toutes mes données. (Celles-ci seront irrécupérables)
+
+
+            .actions
+              %input.btn.primary{:type => "submit", :value => "Submit"}
+                \ 
+                %button.btn{:type => "reset"} Cancel

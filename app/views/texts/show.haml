@@ -1,0 +1,8 @@
+%li{:id => ('text-state-' + text.id.to_s) }
+  .trigger
+  .text
+    .data
+      %h4.text-title= text.title
+    .crud.alert-actions
+      %a.btn.small.edit{:href => "/texts/#{text.permalink}/edit"} Modifier
+      %a.btn.small.delete{:href => "/texts/#{text.permalink}/destroy"} Supprimer

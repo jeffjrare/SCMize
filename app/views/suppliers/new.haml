@@ -1,0 +1,14 @@
+.content
+  .page-header
+    %h1
+      Ajouter un fournisseur
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span11
+      %ul.breadcrumb
+        %li
+          %a{:href => "/suppliers"} Fournisseurs
+          %span.divider /
+        %li.active Ajouter un fournisseur
+        
+      =haml(:'suppliers/_form', :layout => false, :locals => {:supplier => supplier} )

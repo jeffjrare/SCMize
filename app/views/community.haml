@@ -1,0 +1,47 @@
+.content
+  .page-header
+    %h1>
+      Communaut&eacute;
+      %small Connecté en tant que <strong>#{user.mail}</strong>
+  .row
+    .span11
+      %h2 Utilisateurs existants au sein de la communauté
+      %ul#community-nav.pills
+        %li.listing.active
+          %a{:href => "#mes-amis"} Mes amis
+        %li.parameters
+          %a{:href => "#parcourir"} Parcourir la communauté
+
+      .listing-my-friends.tab
+        %h4.count>
+          <span>#{friendships.length}</span> amis
+
+        - if !friendships.blank?
+          %table
+            %tbody
+              - friendships.each do |friendship|
+                %tr
+                  %td
+                    %img{:src => friendship.photo_url}
+                  %td= friendship.username
+                  %td
+                    %a.small.btn{:href => '#'} Retirer de mes amis
+              
+
+      .listing-community.tab
+        %h4.count>
+          <span>#{everyone.length}</span> utilisateurs trouvés
+
+        - if !everyone.blank?
+          %table.zebra-striped.friends
+            %tbody
+              - everyone.sort_by{|e| e.username }.each do |someone|
+                %tr{:id => "friend-#{someone.id}"}
+                  %td
+                    %img{:src => someone.photo_url}
+                  %td= someone.username
+                  %td
+                    %a.small.btn.add{:href => '/amis/ajouter'} Ajouter à mes amis
+              
+
+    .span4= haml(:'_sidebar', :layout => false, :locals => {:friendships => friendships, :user => user} )

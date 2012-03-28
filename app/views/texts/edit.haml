@@ -1,0 +1,27 @@
+.content.text
+  .page-header
+    %h1
+      Travail en cours
+      %small Connecté en tant que <strong>#{session[:user].mail}</strong>
+  .row
+    .span4= haml(:'_sidebar', :layout => false, :locals => {:user => user} )
+
+    .span11
+      %h2= text.title
+      %a.btn.success#btn-text-save{:href => "/texts/#{text.id}/update"} Sauvegarder
+
+      %ul#edit-nav.pills
+        %li.listing.active
+          %a{:href => "#work"} Rédaction du contenu
+        %li.parameters
+          %a{:href => "#view"} Visualisation du contenu
+
+      .text.tab
+        %form
+          %fieldset
+            %textarea#text-content{:name => 'text[content]'}= text.content
+          %a.btn.default Rassembler sous un même chapitre le texte ci-dessus
+          %a.btn.default Créer un nouveau chapitre
+
+      .manage.tab
+

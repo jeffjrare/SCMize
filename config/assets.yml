@@ -1,0 +1,7 @@
+js:
+  application:
+css:
+  application:
+    - reset.css
+    - bootstrap.css
+    - docs.css

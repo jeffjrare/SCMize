@@ -1,0 +1,14 @@
+.content
+  .page-header
+    %h1
+      Achats
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span16
+      %h2.count>
+        <span>#{purchases.count.to_s}</span> commandes d'achats existantes
+        %a.btn.medium.success{:id => 'btn-add-text', :href => "/purchases/new"} Ajouter une commande
+
+      %ul.items
+        - purchases.each do |purchase|
+          = haml(:'purchases/show', :layout => false, :locals => {:purchase => purchase} )

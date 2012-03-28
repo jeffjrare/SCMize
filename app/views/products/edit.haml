@@ -1,0 +1,41 @@
+.content
+  .page-header
+    %h1
+      Modifier un produit
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span16
+      %ul.breadcrumb
+        %li
+          %a{:href => "/products"} Produits
+          %span.divider /
+        %li.active Modifier un produit
+
+    .span4
+      %h2 Opérations
+      %ul
+        %li
+          %a{:href=>''} Commander ce produit à un fournisseur
+        %li
+          %a{:href=>''} Associer un fournisseur
+        %li
+          %a{:href=>''} Empêcher la vente de ce produit
+        %li
+          %a{:href=>''} Empêcher l'achat de ce produit
+        %li
+          %a{:href=>''} Supprimer ce produit
+
+      %h2 Résumé
+      %ul
+        %li Identifiant: #{product.identifier}
+        %li Prix de vente: $#{product.price}
+        %li Création: #{product.created_at}
+
+
+    .span11
+      %h2= product.name
+
+    .span11
+      =haml(:'products/_form', :layout => false, :locals => {:product => product} )
+
+

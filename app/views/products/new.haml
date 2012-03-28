@@ -1,0 +1,14 @@
+.content
+  .page-header
+    %h1
+      Ajouter un produit
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span11
+      %ul.breadcrumb
+        %li
+          %a{:href => "/products"} Produits
+          %span.divider /
+        %li.active Ajouter un produit
+        
+      =haml(:'products/_form', :layout => false, :locals => {:product => product} )

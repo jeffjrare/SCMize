@@ -1,0 +1,27 @@
+%li.item{:id => ('item-state-' + supplier.id.to_s) }
+  .trigger
+  .item
+    .data
+      %h4.item-name= supplier.name
+      %h5.item-identifier= "(#{supplier.identifier})"
+      %h5.item-description= supplier.description
+
+      %ul.infos
+        %li
+          %span.value 0
+          %span.name produits liés
+        %li
+          %span.value 3 jours
+          %span.name délais de livraison
+        %li
+          %span.value Jamais
+          %span.name Dernier achat
+
+    .crud.alert-actions
+      %ul
+        %li
+          %a{:href => "/products/#{supplier.id}/edit"} Modifier
+        %li
+          %a{:href => "/products/#{supplier.id}/edit#!products"} Produits (#{supplier.product_suppliers.length})
+        %li
+          %a{:href => "/products/#{supplier.id}/edit#!purchases"} Achats (#{supplier.purchases.length})

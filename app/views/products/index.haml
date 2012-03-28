@@ -1,0 +1,14 @@
+.content
+  .page-header
+    %h1
+      Produits
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span16
+      %h2.count>
+        <span>#{products.count.to_s}</span> produits existants
+        %a.btn.medium.success{:id => 'btn-add-text', :href => "/products/new"} Ajouter un produit
+
+      %ul.items
+        - products.each do |product|
+          = haml(:'products/show', :layout => false, :locals => {:product => product} )

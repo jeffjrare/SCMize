@@ -1,0 +1,14 @@
+.content
+  .page-header
+    %h1
+      Fournisseurs
+      %small <strong>#{current_account.name}</strong> pour <strong>#{current_user.mail}</strong>
+  .row
+    .span16
+      %h2.count>
+        <span>#{suppliers.count.to_s}</span> fournisseurs
+        %a.btn.medium.success{:id => 'btn-add-text', :href => "/suppliers/new"} Ajouter un fournisseur
+
+      %ul.items
+        - suppliers.each do |supplier|
+          = haml(:'suppliers/show', :layout => false, :locals => {:supplier => supplier} )

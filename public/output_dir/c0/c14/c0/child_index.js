@@ -1,0 +1,5 @@
+var child = [
+  { 'dupe': false, 'type': 12, 'name': 'bootstrap.css', 'dir': 'c0', 'linked': 2, 'url': 'http://pos.local/stylesheets/application/bootstrap.css', 'fetched': true, 'code': 200, 'len': 56326, 'decl_mime': 'text/css', 'sniff_mime': 'text/css', 'cset': '[none]', 'missing': false, 'csens': false, 'child_cnt': 1, 'issue_cnt': [ 2, 0, 0, 0, 0 ] },
+  { 'dupe': false, 'type': 12, 'name': 'jquery.wysiwyg.css', 'dir': 'c1', 'linked': 2, 'url': 'http://pos.local/stylesheets/application/jquery.wysiwyg.css', 'fetched': true, 'code': 200, 'len': 6984, 'decl_mime': 'text/css', 'sniff_mime': 'text/css', 'cset': '[none]', 'missing': false, 'csens': false, 'child_cnt': 1, 'issue_cnt': [ 2, 0, 0, 0, 0 ] },
+  { 'dupe': false, 'type': 12, 'name': 'screen.css', 'dir': 'c2', 'linked': 2, 'url': 'http://pos.local/stylesheets/application/screen.css', 'fetched': true, 'code': 200, 'len': 5623, 'decl_mime': 'text/css', 'sniff_mime': 'text/css', 'cset': '[none]', 'missing': false, 'csens': false, 'child_cnt': 1, 'issue_cnt': [ 2, 0, 0, 0, 0 ] }
+];

@@ -1,0 +1,36 @@
+- if !supplier.new? 
+  %ul.tabs
+    %li.active
+      %a{:href => "#!supplier"} Fournisseur
+    %li
+      %a{:href => "#!suppliers"} Produits (#{supplier.product_suppliers.length})
+
+%form{:action => (supplier.new? ? "/suppliers" : "/suppliers/#{supplier.id}"), :method => 'post'}
+  =csrf_tag
+  %fieldset
+
+    .clearfix
+      %label{:for => "supplier[name]"} Nom du fournisseur
+      .input
+        .input-prepend
+          %input#supplierName.large{:name => "supplier[name]", :size => "50", :type => "text", :value => supplier.name }
+        %span.help-block
+          Inscrivez la façon dont vous voulez que le nom de votre fournisseur soit affiché  
+          
+    .clearfix
+      %label{:for => "supplier[identifier]"} Identifiant/Code
+      .input
+        .input-prepend
+          %input#supplierIdentifier.large{:name => "supplier[identifier]", :size => "20", :type => "text", :value => supplier.identifier }
+        %span.help-block
+          Choisissez un seul mot (Code, SKU, etc.) qui servira d'identifiant de fournisseur
+          
+    .clearfix
+      %label{:for => "supplier[description]"} Description
+      .input
+        .input-prepend
+          %input#supplierDescription.large{:name => "supplier[description]", :size => "128", :type => "text", :value => supplier.description }
+    .actions
+      %input.btn.primary{:type => "submit", :value => "Submit"}
+        \ 
+        %button.btn{:type => "reset"} Cancel

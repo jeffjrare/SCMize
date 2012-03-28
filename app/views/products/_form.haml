@@ -1,0 +1,47 @@
+- if !product.new? 
+  %ul.tabs
+    %li.active
+      %a{:href => "#!products"} Produit
+    %li
+      %a{:href => "#!suppliers"} Fournisseurs (#{product.product_suppliers.length})
+    %li
+      %a{:href => "#!suppliers"} Achats (#{product.purchase_products.length})
+    %li
+      %a{:href => "#!sales"} Ventes
+
+%form{:action => (product.new? ? "/products" : "/products/#{product.id}"), :method => 'post'}
+  =csrf_tag
+  %fieldset
+    .clearfix
+      %label{:for => "product[name]"} Nom du produit
+      .input
+        .input-prepend
+          %input#productName.large{:name => "product[name]", :size => "50", :type => "text", :value => product.name }
+        %span.help-block
+          Inscrivez la façon dont vous voulez que le nom de votre produit soit affiché  
+          
+    .clearfix
+      %label{:for => "product[identifier]"} Identifiant/Code
+      .input
+        .input-prepend
+          %input#productIdentifier.large{:name => "product[identifier]", :size => "20", :type => "text", :value => product.identifier }
+        %span.help-block
+          Choisissez un seul mot (Code, SKU, etc.) qui servira d'identifiant de produit
+          
+    .clearfix
+      %label{:for => "product[description]"} Description
+      .input
+        .input-prepend
+          %input#productDescription.large{:name => "product[description]", :size => "128", :type => "text", :value => product.description }
+
+    .clearfix
+      %label{:for => "product[price]"} Prix de vente
+      .input
+        .input-prepend
+          %span.add-on $
+          %input#productPrice.small{:name => "product[price]", :size => "10", :type => "text", :value => product.price }
+          
+    .actions
+      %input.btn.primary{:type => "submit", :value => "Submit"}
+        \ 
+        %button.btn{:type => "reset"} Cancel

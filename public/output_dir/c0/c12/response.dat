@@ -1,0 +1,92 @@
+HTTP/1.1 404 Not Found
+Date: Sun, 18 Dec 2011 16:43:06 GMT
+Server: Apache/2.2.17 (Ubuntu)
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.9
+X-Frame-Options: sameorigin
+X-XSS-Protection: 1; mode=block
+X-Cascade: pass
+Set-Cookie: rack.session=BAh7CkkiD3Nlc3Npb25faWQGOgZFRiJFNjk5NjM5MjhmNWNjYTQ5ZmU5MjRm%0AZGMyZDEzYTBjNTA5NTQwZmY4ZDdhODVmNzIwNzA1Y2IzMjdiYmRmMjZkMUki%0ADXRyYWNraW5nBjsARnsISSIUSFRUUF9VU0VSX0FHRU5UBjsARiItMWY5NjJk%0ANGQ5M2JjYmUxYTI5OTlhNTY3N2IyNTZjMTZjMzI0YmY5MkkiGUhUVFBfQUND%0ARVBUX0VOQ09ESU5HBjsARiItY2E1NDZlMzY5YmVlY2FhZTM5NjhjMTI2ZmNj%0AYjhiNTQxNWU0YWU4NEkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsARiItZGEz%0AOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2MDE4OTBhZmQ4MDcwOUkiCWNzcmYG%0AOwBGIkUyMjJjYmMyNzg0OTk3NGM5ZjNlZDJmNjUxNmE2MjFiZGY4YWQ4MTFk%0AZjNiNDdlZTc3MTQxMzc2NmZiZGJmZjI4SSIJdXNlcgY7AEZvOglVc2VyDjoI%0AQGlkaQc6C0Bsb2dpbjA6CkBtYWlsSSIZc2tpcGZpc2hAZXhhbXBsZS5jb20G%0AOwBUOhBAY3JlYXRlZF9hdFU6DURhdGVUaW1lWwhVOg1SYXRpb25hbFsHbCsI%0AY2X7DgIAaQIQDlU7DFsHafZpHWkDGRUjOhBAYWNjb3VudF9pZGkHOhFAX3Jl%0AcG9zaXRvcnlvOhtEYXRhTWFwcGVyOjpSZXBvc2l0b3J5CDoKQG5hbWU6DGRl%0AZmF1bHQ6E0BpZGVudGl0eV9tYXBzewZjCVVzZXJDOhxEYXRhTWFwcGVyOjpJ%0AZGVudGl0eU1hcHsGWwZpB0ATOg1AYWRhcHRlcm86J0RhdGFNYXBwZXI6OkFk%0AYXB0ZXJzOjpNeXNxbEFkYXB0ZXIKOxA7EToNQG9wdGlvbnNDOhVEYXRhTWFw%0AcGVyOjpNYXNoew5JIgtzY2hlbWUGOwBGSSIKbXlzcWwGOwBGSSIJdXNlcgY7%0AAEZJIglyb290BjsARkkiDXBhc3N3b3JkBjsARkkiC2plZmY2OQY7AEZJIglo%0Ab3N0BjsARkkiDmxvY2FsaG9zdAY7AFRJIglwb3J0BjsARjBJIglwYXRoBjsA%0ARkkiFC9jYXBpdGFsY29ubmVjdAY7AEZJIgpxdWVyeQY7AEYwSSINZnJhZ21l%0AbnQGOwBGMEkiDGFkYXB0ZXIGOwBGQCQ6IEByZXNvdXJjZV9uYW1pbmdfY29u%0AdmVudGlvbm1GRGF0YU1hcHBlcjo6TmFtaW5nQ29udmVudGlvbnM6OlJlc291%0AcmNlOjpVbmRlcnNjb3JlZEFuZFBsdXJhbGl6ZWQ6HUBmaWVsZF9uYW1pbmdf%0AY29udmVudGlvbm02RGF0YU1hcHBlcjo6TmFtaW5nQ29udmVudGlvbnM6OkZp%0AZWxkOjpVbmRlcnNjb3JlZDoUQG5vcm1hbGl6ZWRfdXJpbzoVRGF0YU9iamVj%0AdHM6OlVSSQ86DEBzY2hlbWVAJDoPQHN1YnNjaGVtZTA6CkB1c2VyQCY6DkBw%0AYXNzd29yZEAoOgpAaG9zdEAqOgpAcG9ydDA6CkBwYXRoQC06C0BxdWVyeUM7%0AF3sOSSILc2NoZW1lBjsARkAkSSIJdXNlcgY7AEZAJkkiDXBhc3N3b3JkBjsA%0ARkAoSSIJaG9zdAY7AEZAKkkiCXBvcnQGOwBGMEkiCXBhdGgGOwBGQC1JIgpx%0AdWVyeQY7AEYwSSINZnJhZ21lbnQGOwBGMEkiDGFkYXB0ZXIGOwBGQCQ6DkBm%0AcmFnbWVudDA6DkByZWxhdGl2ZTA6GEBfcGVyc2lzdGVuY2Vfc3RhdGVvOjJE%0AYXRhTWFwcGVyOjpSZXNvdXJjZTo6UGVyc2lzdGVuY2VTdGF0ZTo6Q2xlYW4H%0AOg5AcmVzb3VyY2VAEzoLQG1vZGVsQB46CkBfa2V5WwZpBzoNQGFjY291bnRv%0AOgxBY2NvdW50CzsHaQc6EEBpZGVudGlmaWVySSIGMQY7AFQ7EEkiClNtaXRo%0ABjsAVDsKVTsLWwhVOwxbB2wrCGNl%2Bw4CAGkCEA5VOwxbB2n2aR1pAxkVIzsO%0AbzsPCDsQOxE7EnsGYwxBY2NvdW50QzsTewZbBmkHQEA7FEAhOyZvOycHOyhA%0AQDspQExJIgxhY2NvdW50BjsARkBA%0A
+Status: 404
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 1062
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html;charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+      <title>Capital Connect - Page introuvable</title>
+      <meta content='' name='description'>
+        <meta content='' name='author'>
+          <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+          <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+          <link rel='stylesheet' href='/stylesheets/application/screen.css?1324158314' media='all' />
+          <link rel='stylesheet' href='/stylesheets/application/jquery.wysiwyg.css?1322795982' media='all' />
+          <link rel='stylesheet' href='/stylesheets/application/bootstrap.css?1322606929' media='all' />
+        </meta>
+      </meta>
+    </meta>
+  </head>
+  <body class='page '>
+    <div class='topbar'>
+      <div class='fill'>
+        <div class='container'>
+          <a class='brand' href='/'>Capital Connect</a>
+          <ul class='nav'>
+            <li class=''>
+              <a href='/overview'>Vue d'ensemble</a>
+            </li>
+            <li class=''>
+              <a href='/products'>Produits</a>
+            </li>
+            <li class=''>
+              <a href='/purchases'>Achats</a>
+            </li>
+            <li class=''>
+              <a href='/suppliers'>Fournisseurs</a>
+            </li>
+            <li class='active'>
+              <a href='/sales'>Ventes</a>
+            </li>
+            <li class=''>
+              <a href='/customers'>Clients</a>
+            </li>
+            <li class=''>
+              <a href='/account'>Gestion</a>
+            </li>
+            <li class=''>
+              <a href='/contact'>Support</a>
+            </li>
+          </ul>
+          <a class='logoff btn pull-right' href='/logout'>Déconnexion</a>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='content'>&#x000A;  <div class='page-header'>&#x000A;    <h1>&#x000A;      Page introuvable&#x000A;      <small>Erreur 404</small>&#x000A;    </h1>&#x000A;  </div>&#x000A;  <div class='row'>&#x000A;    <div class='span15'>&#x000A;      <p>La page demandée n'a pas été trouvée.</p>&#x000A;    </div>&#x000A;  </div>&#x000A;</div>
+      <footer>
+        <p>© Capital Connect - Tous droits réservés</p>
+        <p><a href='/termes-utilisations'>Termes d'utilisations</a>
+        &dash;
+        <a href='/respect-vie-privee'>Respect de la vie privée</a></p>
+      </footer>
+    </div>
+    <script src='/javascripts/application/jquery.min.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/jquery-ui.min.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/jquery.wysiwyg.js?1322795555' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-alerts.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-popover.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-twipsy.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-modal.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-dropdown.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-tabs.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-buttons.js?1322606929' type='text/javascript'></script>
+    <script src='/javascripts/application/bootstrap-scrollspy.js?1322606930' type='text/javascript'></script>
+    <script src='/javascripts/application/screen.js?1322795600' type='text/javascript'></script>
+  </body>
+</html>
