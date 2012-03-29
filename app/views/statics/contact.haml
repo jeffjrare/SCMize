@@ -2,24 +2,25 @@
   .span15
     %h2= settings.title
 
-    %form{:action => '/mon-compte', :method => 'post'}
+    %form{:action => '/contact', :method => 'post'}
       %fieldset
         .clearfix
-          %label{:for => "contact-mail"} Votre courriel
+          %label{:for => "contact-mail"} Email
           .input
             .input-prepend
               %span.add-on @
               %input#contact-mail.large{:name => "contact[mail]", :size => "50", :type => "text", :value => nil}/
         .clearfix
-          %label{:for => "contact-subject"} Sujet
+          %label{:for => "contact-subject"} Subject
           .input
             %select#contact-subject{:name => "normalSelect"}
-              %option Commentaire
-              %option Problème/Support technique
-              %option Suggestions/Idées
-              %option Autres
+              %option Comments
+              %option Bug/Technical Support
+              %option Features suggests / Idea
+              %option Partnership / Contribution
+              %option Other
         .clearfix
-          %label{:for => "contact-content"} Exprimez-vous
+          %label{:for => "contact-content"} Body
           .input
             %textarea#contact-content.xlarge{:name => "contact[content]", :rows => "8"}
         .actions

@@ -1,0 +1,29 @@
+%li.item{:id => ('item-state-' + machine.id.to_s) }
+  .trigger
+  .item
+    .data
+      %h4.item-name= machine.name
+      %h5.item-identifier= "(#{machine.identifier})"
+      %h5.item-description= machine.name
+
+      %ul.infos
+        %li
+          %span.value 1 year
+          %span.name aging
+        %li
+          %span.value $12500
+          %span.name maintenance/year
+        %li
+          %span.value 4
+          %span.name workforce          
+        %li
+          %span.value 2%
+          %span.name downtime
+        %li
+          %span.value 96.64%
+          %span.name quality
+
+    .crud.alert-actions
+      %ul
+        %li
+          %a{:href => "/machines/#{machine.id}/edit"} Modifier

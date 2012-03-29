@@ -4,3 +4,8 @@
       %a{:href => "/#/overview"} Overview
     %li
       %a{:href => "/#/products/new"} Create a new product
+
+
+%ul.items
+  - products.each do |product|
+    = haml(:'products/show', :layout => false, :locals => {:product => product} )

@@ -4,15 +4,12 @@
     .data
       %h4.item-name= product.name
       %h5.item-identifier= "(#{product.identifier})"
-      %h5.item-description= product.description
+      %h5.item-description= product.name
 
       %ul.infos
         %li
           %span.value 0
           %span.name en stock
-        %li
-          %span.value="$#{product.price}"
-          %span.name prix de vente
         %li
           %span.value $0
           %span.name coût à l'achat
@@ -30,9 +27,3 @@
       %ul
         %li
           %a{:href => "/products/#{product.id}/edit"} Modifier
-        %li
-          %a{:href => "/products/#{product.id}/edit#!suppliers"} Fournisseurs (#{product.purchase_products.length})
-        %li
-          %a{:href => "/products/#{product.id}/edit#!purchases"} Achats (#{product.product_suppliers.length})
-        %li
-          %a{:href => "/products/#{product.id}/sales#!sales"} Ventes (0)

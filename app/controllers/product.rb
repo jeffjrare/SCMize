@@ -1,6 +1,12 @@
 class Scmize < Sinatra::Application
   get '/products' do
     products = Product.all
+
+    product = Product.new
+    product.name = 'Fiber composite A4'
+    product.identifier = 'FCA1'
+    products << product
+
     haml :'products/index', :locals => {:subtitle => 'Products', :products => products}
   end
   

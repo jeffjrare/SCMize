@@ -13,4 +13,5 @@ class Machine
 
     machine
   end
+
 end

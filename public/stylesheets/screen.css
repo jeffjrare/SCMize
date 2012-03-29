@@ -1,0 +1,166 @@
+
+ul.items{
+  float: left;
+  margin-left: 0;
+  margin-top: 30px;
+  width: 930px;
+}
+
+ul.items li.item{
+  border-bottom: 1px solid #E9E9E9;
+  clear: left;
+  float: left;
+  list-style-type: none;
+  min-height: 90px;
+  padding: 20px 10px 10px 0;
+  width: 100%;
+}
+
+ul.items li.item:hover{
+  background: #f7f7f7;
+}
+
+ul.items li.item .trigger{
+  float:left;
+  min-height: 30px;
+  width: 35px;
+}
+
+ul.items li.item:hover .trigger{
+}
+
+ul.items div.item{
+  float:left;
+  width: 860px;
+}
+
+ul.items li.item:hover div.item{
+}
+
+ul.items div.item .data{
+  float: left;
+  width: 700px;
+}
+
+ul.items div.item h4{
+  float: left;
+}
+
+ul.items div.item span.text-state{
+  float:left;
+  margin: 7px 0 0 20px;
+}
+
+ul.items div.item span.text-state:hover{
+  cursor: pointer;
+}
+
+ul.items div.item span.text-state.online:hover{
+    background: #027f34;
+}
+
+ul.items div.item span.text-state.offline:hover{
+    background: #999;
+}
+
+span.text-state.label.success.online{
+  display: none;
+}
+
+ul.texts div.item span.text-title,
+ul.texts div.item span.text-content{
+  clear: left;
+  float: left;
+  margin: 10px 0 0 20px;
+}
+
+ul.items div.crud{
+  display: none;
+  float: right;
+  margin-top: 20px;
+  padding: 0;
+}
+
+ul.items div.crud .btn{
+  font-weight: bold;
+  float:left;
+  margin-left: 5px;
+  text-align: center;
+  width: 75px;
+}
+
+ul.items div.crud ul li{
+  clear: left;
+  float: left;
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+
+
+ul.items li.item:hover div.crud{
+  display: block;
+}
+
+ul.items h5{
+  font-size: .89em;
+  line-height: 20px;
+}
+
+ul.items h4.item-name{
+  float: left;
+  line-height: 20px;
+  max-width: 400px;
+}
+
+ul.items h5.item-identifier{
+  float: left;
+  max-width: 200px;
+  padding: 1px 0 0 20px;
+}
+
+ul.items h5.item-description{
+  clear: left;
+  float: left;
+  font-weight: normal;
+}
+
+ul.infos{
+  clear: left;
+  float: left;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  padding-bottom: 10px;
+}
+
+ul.infos li{
+  float:left;
+  list-style-type: none;
+  margin: 20px 14px 0 0;
+  padding: 8px;
+  text-align: center;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+ul.infos li:hover{
+  background: #eaeaea;
+}
+
+ul.infos li span{
+  clear: left;
+  float: left;
+}
+
+ul.infos li span.value{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+ul.infos li span.name{
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: center;
+}
