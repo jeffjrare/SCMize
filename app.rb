@@ -4,24 +4,31 @@ require 'sinatra/minify'
 require 'data_mapper' 
 require 'haml'
 #require "rack/csrf"
+
+# Custom libs
 require_relative 'libs/base'
+
+# Orm
 require_relative 'config/db'
+
+# Controllers & models
 Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require file }
 
 class Scmize < Sinatra::Application
   include Sinatra::Minify
 
-  set :title, 'Scmize'
-  set :root, File.dirname(__FILE__)
-  set :views, Proc.new { File.join(root, "app/views") }
   set :app_file, __FILE__
-  set :raise_errors, false if production?
   set :haml, :layout => :'layouts/app'
+  set :raise_errors, false if production?
+  set :root, File.dirname(__FILE__)
+  set :title, 'Scmize'
+  set :views, Proc.new { File.join(root, "app/views") }
+  
   enable :sessions
 
+  # Sinatra-minify
   set :js_path, 'public/javascripts'
   set :js_url,  '/javascripts'
-
   set :css_path, 'public/stylesheets'
   set :css_url,  '/stylesheets'
 
@@ -30,7 +37,7 @@ class Scmize < Sinatra::Application
     register Sinatra::Reloader
     config.also_reload "app/controllers/*.rb"
     config.also_reload "app/models/*.rb"
-    #set :logging, :true
+
     #use Rack::Session::Cookie, :secret => "25CCEAE5083C4919DA44FACE551B336B931E5FBFC376A550E825767C1B1EBDB0"
     #use Rack::Csrf, :raise => true
   end
@@ -56,28 +63,24 @@ class Scmize < Sinatra::Application
     end
   end
 
+  # Session loading
   before do
     @user = User.first(:conditions => {:id => session[:user_id]}) if session[:user_id]
     @account = @user.account if @user
   end
 
+  # 404
   not_found do
     haml :'404', :locals => {:subtitle => 'Not found'}
   end
   
+  # route: map root
   get '/' do
     haml :index, :locals => { :subtitle => 'Overview' }
   end
 
-  def current_domain
-    "scimze.local/"
-  end
-
-  def current_account
-    @account
-  end
-
-  def current_user
-    @user
-  end
+  # Custom methods
+  def current_domain; "scimze.local/"; end
+  def current_account; @account; end;
+  def current_user; @user; end;
 end
