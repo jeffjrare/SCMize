@@ -1,18 +1,12 @@
 require 'sinatra'
-#require "sinatra/reloader"
+require "sinatra/reloader"
 require 'sinatra/minify'
 require 'data_mapper' 
 require 'haml'
 #require "rack/csrf"
-
-DataMapper::Logger.new(STDOUT, :debug)
-#DataMapper::Model.raise_on_save_failure = true
-DataMapper.setup(:default, 'mysql://scimze::scmize666@localhost/scmize')
-
-Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require file }
 require_relative 'libs/base'
-
-DataMapper.finalize.auto_upgrade!
+require_relative 'config/db'
+Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require file }
 
 class Scmize < Sinatra::Application
   include Sinatra::Minify
@@ -33,9 +27,9 @@ class Scmize < Sinatra::Application
 
   configure :development do |config|
     use Sinatra::ShowExceptions
-    #register Sinatra::Reloader
-    #config.also_reload "app/controllers/*.rb"
-    #config.also_reload "app/models/*.rb"
+    register Sinatra::Reloader
+    config.also_reload "app/controllers/*.rb"
+    config.also_reload "app/models/*.rb"
     #set :logging, :true
     #use Rack::Session::Cookie, :secret => "25CCEAE5083C4919DA44FACE551B336B931E5FBFC376A550E825767C1B1EBDB0"
     #use Rack::Csrf, :raise => true
@@ -68,11 +62,11 @@ class Scmize < Sinatra::Application
   end
 
   not_found do
-    #haml :'404', :locals => {:title_part => 'Page introuvable'}
+    haml :'404', :locals => {:subtitle => 'Not found'}
   end
   
   get '/' do
-    haml :index, :locals => { :title_part => 'Accueil' }
+    haml :index, :locals => { :subtitle => 'Overview' }
   end
 
   def current_domain

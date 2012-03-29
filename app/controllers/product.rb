@@ -1,12 +1,12 @@
-class CapitalConnect < Sinatra::Application
+class Scmize < Sinatra::Application
   get '/products' do
     products = Product.all
-    haml :'products/index', :locals => {:title_part => 'Produits', :products => products}
+    haml :'products/index', :locals => {:subtitle => 'Products', :products => products}
   end
   
   get '/products/new' do
     product = Product.new
-    haml :'products/new', :locals => {:title_part => 'Produits', :product => product}
+    haml :'products/new', :locals => {:subtitle => 'Products', :product => product}
   end
   
   post '/products' do
@@ -16,7 +16,7 @@ class CapitalConnect < Sinatra::Application
 
   get '/products/:id/edit' do |id|
     product = Product.first(:conditions => { :id => id })
-    haml :'products/edit', :locals => {:title_part => 'Produits', :product => product}
+    haml :'products/edit', :locals => {:subtitle => 'Products', :product => product}
   end
 
   post '/products/:id' do |id|

@@ -1,2 +1,2 @@
-class CapitalConnect < Sinatra::Application
+class Scmize < Sinatra::Application
 end

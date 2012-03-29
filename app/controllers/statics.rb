@@ -1,9 +1,9 @@
-class CapitalConnect < Sinatra::Application
-  get '/a-propos' do
-    haml :'statics/about', :locals => {:title_part => '&Agrave; propos'}
+class Scmize < Sinatra::Application
+  get '/about' do
+    haml :'statics/about', :locals => {:subtitle => 'About'}
   end
 
   get '/contact' do
-    haml :'statics/contact', :locals => {:title_part => 'Contact'}
+    haml :'statics/contact', :locals => {:subtitle => 'Contact'}
   end
 end

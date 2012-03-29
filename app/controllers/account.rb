@@ -1,11 +1,11 @@
-class CapitalConnect < Sinatra::Application
+class Scmize < Sinatra::Application
   get '/signup' do
-    haml :'accounts/new', :locals => {:title_part => 'Nouveau compte'}
+    haml :'accounts/new', :locals => {:subtitle => 'Nouveau compte'}
   end
 
   get '/account' do
     user = current_user
-    haml :'users/show', :locals => {:title_part => 'Mon compte', :user => user}
+    haml :'users/show', :locals => {:subtitle => 'Mon compte', :user => user}
   end
 
   post '/signup' do

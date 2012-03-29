@@ -1,36 +1,28 @@
-.content
-  .page-header
-    %h1
-      Contact et support
-  .row
-    .span15
-      %h2= settings.title
-      %p En tant que responsable de l'application, il me fera plaisir de prendre connaissances de tous vos commentaires, questions ou autres sujets dont vous désirez me faire part. N'hésitez pas à communiquer avec moi en tout temps.
+.row
+  .span15
+    %h2= settings.title
 
-      %h4 Utilisez le formulaire ci-dessous pour obtenir une réponse rapide!
-      %p Prenez simplement soin de bien remplir le tout et je vous répondrai dans les plus brefs délais.
-
-      %form{:action => '/mon-compte', :method => 'post'}
-        %fieldset
-          .clearfix
-            %label{:for => "contact-mail"} Votre courriel
-            .input
-              .input-prepend
-                %span.add-on @
-                %input#contact-mail.large{:name => "contact[mail]", :size => "50", :type => "text", :value => session[:user].mail}/
-          .clearfix
-            %label{:for => "contact-subject"} Sujet
-            .input
-              %select#contact-subject{:name => "normalSelect"}
-                %option Commentaire
-                %option Problème/Support technique
-                %option Suggestions/Idées
-                %option Autres
-          .clearfix
-            %label{:for => "contact-content"} Exprimez-vous
-            .input
-              %textarea#contact-content.xlarge{:name => "contact[content]", :rows => "8"}
-          .actions
-            %input.btn.primary{:type => "submit", :value => "Submit"}
-              \ 
-              %button.btn{:type => "reset"} Cancel
+    %form{:action => '/mon-compte', :method => 'post'}
+      %fieldset
+        .clearfix
+          %label{:for => "contact-mail"} Votre courriel
+          .input
+            .input-prepend
+              %span.add-on @
+              %input#contact-mail.large{:name => "contact[mail]", :size => "50", :type => "text", :value => nil}/
+        .clearfix
+          %label{:for => "contact-subject"} Sujet
+          .input
+            %select#contact-subject{:name => "normalSelect"}
+              %option Commentaire
+              %option Problème/Support technique
+              %option Suggestions/Idées
+              %option Autres
+        .clearfix
+          %label{:for => "contact-content"} Exprimez-vous
+          .input
+            %textarea#contact-content.xlarge{:name => "contact[content]", :rows => "8"}
+        .actions
+          %input.btn.primary{:type => "submit", :value => "Submit"}
+            \ 
+            %button.btn{:type => "reset"} Cancel

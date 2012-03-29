@@ -4,7 +4,7 @@ gem 'sinatra'
 gem 'haml'
 gem 'data_mapper'
 gem "bson_ext", "~> 1.4"
-#gem 'sinatra-reloader'
+gem 'sinatra-reloader'
 gem 'sinatra-minify'
 #gem 'sinatra-rabbit'
 #gem 'sinatra-subdomain'

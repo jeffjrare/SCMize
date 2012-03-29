@@ -32,10 +32,14 @@
                 %a{:href => '/products'} Products
               %li
                 %a{:href => '/settings'} Settings
+              %li
+                %a{:href => '/contact'} Contact                
+              %li
+                %a{:href => '/about'} About                
     .container
       %header#overview.jumbotron.subhead
         %h1 #{settings.title}
-        %p.lead asdasdasdasd
+        %p.lead #{subtitle}
       = preserve(yield)
 
     %footer.footer

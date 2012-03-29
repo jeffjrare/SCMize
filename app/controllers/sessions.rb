@@ -1,6 +1,6 @@
-class CapitalConnect < Sinatra::Application
+class Scmize < Sinatra::Application
   get '/login' do
-    haml :'sessions/new', :locals => {:title_part => 'Ouvrir une session'}
+    haml :'sessions/new', :locals => {:subtitle => 'Login'}
   end
 
   get '/logout' do

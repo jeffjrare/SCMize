@@ -1,6 +1,6 @@
-class CapitalConnect < Sinatra::Application
+class Scmize < Sinatra::Application
   get '/overview' do
-    haml :'overview', :locals => {:title_part => 'Tableau de bord'}
+    haml :'overview', :locals => {:subtitle => 'Tableau de bord'}
   end
 
   post '/texts/add' do
@@ -18,7 +18,7 @@ class CapitalConnect < Sinatra::Application
 
     session[:current_text_id] = text.id
     
-    haml :'texts/edit', :locals => {:title_part => 'Modifier un texte', :text => text, :user => get_current_user}
+    haml :'texts/edit', :locals => {:subtitle => 'Modifier un texte', :text => text, :user => get_current_user}
   end
 
   post '/texts/:id/update' do |id|
