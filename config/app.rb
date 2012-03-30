@@ -5,28 +5,19 @@ require 'data_mapper'
 require 'haml'
 #require "rack/csrf"
 
-# Custom libs
-require_relative 'libs/base'
-
-# Controllers & models
-Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require file }
-
-# Orm
-require_relative 'config/db'
-
 class Scmize < Sinatra::Application
   include Sinatra::Minify
 
   set :app_file, __FILE__
   set :haml, :layout => :'layouts/app'
   set :raise_errors, false if production?
-  set :root, File.dirname(__FILE__)
+  set :root, Pathname.new(File.dirname(__FILE__)).parent.to_s
   set :title, 'Scmize'
   set :views, Proc.new { File.join(root, "app/views") }
-  
   enable :sessions
 
   # Sinatra-minify
+  set :minify_config, 'assets.yml'
   set :js_path, 'public/javascripts'
   set :js_url,  '/javascripts'
   set :css_path, 'public/stylesheets'
