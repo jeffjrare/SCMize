@@ -1,0 +1,28 @@
+%form.form-horizontal.well{:action => (machine.new? ? "/machines" : "/machines/#{machine.id}"), :method => 'post'}
+  //=csrf_tag
+  %fieldset
+    %legend Let's define this new machine!
+    .control-group
+      %label.control-label{:for => "machine-name"} Name
+      .controls
+        %input#machine-name.input-xlarge{:name => 'machine[name]', :type => "text", :value => machine.name}
+          %p.help-block Provide a short name
+    .control-group
+      %label.control-label{:for => "machine-identifier"} Identifier
+      .controls
+        %input#machine-identifier.input-xlarge{:name => 'machine[identifier]', :type => "text", :value => machine.identifier}
+          %p.help-block Unique code maybe based upon a defined standard - as you wish!       
+    .control-group
+      %label.control-label{:for => "machine-type"} Purpose
+      .controls
+        %select#machine-type
+          %option Primary production equipment
+          %option Secondary/support production equipment
+          %option Shipping equipment
+          %option Setup equipment
+          %option Tools
+          %option Other
+
+    .form-actions
+      %button.btn.btn-primary{:type => "submit"} Save changes
+      %button.btn{:type => "reset"} Cancel

@@ -8,8 +8,8 @@ class Machine
   
   
   def self.create_and_save properties
-    machine = Machine.create :name => properties['name'],
-                             :identifier => properties['identifier']
+    machine = Machine.create :name => properties[:name],
+                             :identifier => properties[:identifier]
 
     machine
   end

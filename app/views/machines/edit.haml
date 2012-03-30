@@ -1,0 +1,11 @@
+.subnav
+  %ul.nav.nav-pills
+    %li
+      %a{:href => "/machines"} Overview
+    %li.active
+      %a{:href => "/machines/#{machine.id}edit"} Edit an existing machine
+    %li
+      %a{:href => "/machines/new"} Create a new machine
+
+      
+=haml(:'machines/_form', :layout => false, :locals => {:machine => machine} )

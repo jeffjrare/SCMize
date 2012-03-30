@@ -8,8 +8,8 @@ class Product
   
   
   def self.create_and_save properties
-    product = Product.create :name => properties['name'],
-                             :identifier => properties['identifier']
+    product = Product.create :name => properties[:name],
+                             :identifier => properties[:identifier]
 
     product
   end

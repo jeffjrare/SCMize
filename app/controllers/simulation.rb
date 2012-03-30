@@ -6,7 +6,7 @@ class Scmize < Sinatra::Application
   
   get '/simulations/new' do
     product = Simulation.new
-    haml :'simulations/new', :locals => {:subtitle => 'Simulations', :simulation => product}
+    haml :'simulations/new', :locals => {:subtitle => 'Simulations - Create a new one', :simulation => product}
   end
   
   post '/simulations' do
@@ -16,7 +16,7 @@ class Scmize < Sinatra::Application
 
   get '/simulations/:id/edit' do |id|
     product = Simulation.first(:conditions => { :id => id })
-    haml :'simulations/edit', :locals => {:subtitle => 'Simulations', :simulation => product}
+    haml :'simulations/edit', :locals => {:subtitle => 'Simulations - Edit', :simulation => product}
   end
 
   post '/simulations/:id' do |id|

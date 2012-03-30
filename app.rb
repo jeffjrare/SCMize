@@ -8,11 +8,11 @@ require 'haml'
 # Custom libs
 require_relative 'libs/base'
 
-# Orm
-require_relative 'config/db'
-
 # Controllers & models
 Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require file }
+
+# Orm
+require_relative 'config/db'
 
 class Scmize < Sinatra::Application
   include Sinatra::Minify
