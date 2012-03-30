@@ -8,7 +8,7 @@ require 'haml'
 require_relative '../libs/base'
 
 # Controllers & models
-Dir.glob(File.join(File.dirname(__FILE__), "app/**/*.rb")).each{ |file| require_relative file }
+Dir.glob(File.join(Pathname.new(File.dirname(__FILE__)).parent.to_s, "app/**/*.rb")).each{ |file| require_relative file }
 
 # Orm
 require_relative 'db'
