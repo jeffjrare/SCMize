@@ -6,20 +6,20 @@
       %h5.item-identifier= "(#{simulation.identifier})"
       %h5.item-identifier
         %span.label.label-info Primary production
-      %h5.item-description= "#{simulation.machine.identifier} - #{simulation.machine.name} => #{simulation.product.identifier} - #{simulation.product.name}"
+      %h5.item-description= "#{simulation.machine.name} => #{simulation.product.name}"
 
       %ul.infos
         %li
-          %span.value 1 year
-          %span.name aging
+          %span.value=simulation.machine.identifier
+          %span.name machine
         %li
-          %span.value $12500
-          %span.name maintenance/year
+          %span.value=simulation.product.identifier
+          %span.name product
         %li
-          %span.value 4
-          %span.name workforce          
+          %span.value Finished product
+          %span.name Type  
         %li
-          %span.value 2%
+          %span.value=simulation.created_at.to_s
           %span.name downtime
         %li
           %span.value 96.64%

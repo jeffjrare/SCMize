@@ -8,4 +8,4 @@
       %a{:href => "/simulations/new"} Create a new simulation
 
       
-=haml(:'simulations/_form', :layout => false, :locals => {:simulation => simulation} )
+=haml(:'simulations/_form', :layout => false, :locals => {:simulation => simulation, :machines => machines, :products => products} )

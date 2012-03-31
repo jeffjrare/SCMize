@@ -19,7 +19,10 @@ class Scmize < Sinatra::Application
 
   get '/simulations/:id/edit' do |id|
     simulation = Simulation.first(:conditions => { :id => id })
-    haml :'simulations/edit', :locals => {:subtitle => 'Simulations - Edit', :simulation => simulation}
+    machines = Machine.all
+    products = Product.all
+
+    haml :'simulations/edit', :locals => {:subtitle => 'Simulations - Edit', :simulation => simulation, :machines => machines, :products => products}
   end
 
   post '/simulations/:id' do |id|
