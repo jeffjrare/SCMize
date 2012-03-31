@@ -5,18 +5,21 @@ class Scmize < Sinatra::Application
   end
   
   get '/simulations/new' do
-    product = Simulation.new
-    haml :'simulations/new', :locals => {:subtitle => 'Simulations - Create a new one', :simulation => product}
+    simulation = Simulation.new
+    machines = Machine.all
+    products = Product.all
+
+    haml :'simulations/new', :locals => {:subtitle => 'Simulations - Create a new one', :simulation => simulation, :machines => machines, :products => products}
   end
   
   post '/simulations' do
-    Simulation.create_and_save(current_account, params[:simulation])
+    Simulation.create_and_save(params[:simulation])
     redirect to('/simulations')
   end
 
   get '/simulations/:id/edit' do |id|
-    product = Simulation.first(:conditions => { :id => id })
-    haml :'simulations/edit', :locals => {:subtitle => 'Simulations - Edit', :simulation => product}
+    simulation = Simulation.first(:conditions => { :id => id })
+    haml :'simulations/edit', :locals => {:subtitle => 'Simulations - Edit', :simulation => simulation}
   end
 
   post '/simulations/:id' do |id|

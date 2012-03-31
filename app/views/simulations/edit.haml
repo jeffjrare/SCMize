@@ -1,0 +1,11 @@
+.subnav
+  %ul.nav.nav-pills
+    %li
+      %a{:href => "/simulations"} Overview
+    %li.active
+      %a{:href => "/simulations/#{simulation.id}edit"} Edit an existing simulation
+    %li
+      %a{:href => "/simulations/new"} Create a new simulation
+
+      
+=haml(:'simulations/_form', :layout => false, :locals => {:simulation => simulation} )

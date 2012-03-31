@@ -1,0 +1,31 @@
+%form.form-horizontal.well{:action => (simulation.new? ? "/simulations" : "/simulations/#{simulation.id}"), :method => 'post'}
+  //=csrf_tag
+  %fieldset
+    %legend Let's define this new simulation!
+    .control-group
+      %label.control-label{:for => "simulation-name"} Name
+      .controls
+        %input#simulation-name.input-xlarge{:name => 'simulation[name]', :type => "text", :value => simulation.name}
+          %p.help-block Provide a short name
+    .control-group
+      %label.control-label{:for => "simulation-identifier"} Identifier
+      .controls
+        %input#simulation-identifier.input-xlarge{:name => 'simulation[identifier]', :type => "text", :value => simulation.identifier}
+          %p.help-block Unique code maybe based upon a defined standard - as you wish!       
+    .control-group
+      %label.control-label{:for => "machine"} Machine
+      .controls
+        %select#machine{:name => 'simulation[machine_id]'}
+          %option
+          - machines.each do |machine|
+            %option{:value => machine.id}= "#{machine.identifier} - #{machine.name}"
+    .control-group
+      %label.control-label{:for => "product"} Product
+      .controls
+        %select#product{:name => 'simulation[product_id]'}
+          %option
+          - products.each do |product|
+            %option{:value => product.id}= "#{product.identifier} - #{product.name}"
+    .form-actions
+      %button.btn.btn-primary{:type => "submit"} Save changes
+      %button.btn{:type => "reset"} Cancel

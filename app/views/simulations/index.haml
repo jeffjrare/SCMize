@@ -1,6 +1,10 @@
 .subnav
   %ul.nav.nav-pills
     %li.active
-      %a{:href => "/#/overview"} Overview
+      %a{:href => "/simulations"} Overview
     %li
-      %a{:href => "/#/simulations/new"} Create a new simulation
+      %a{:href => "/simulations/new"} Create a new simulation
+
+%ul.items
+  - simulations.each do |simulation|
+    = haml(:'simulations/show', :layout => false, :locals => {:simulation => simulation} )
