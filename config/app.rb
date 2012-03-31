@@ -67,7 +67,16 @@ class Scmize < Sinatra::Application
   
   # route: map root
   get '/' do
-    haml :index, :locals => { :subtitle => 'Overview' }
+    products = Product.all(:order => [ :created_at.desc ], :limit => 3)
+    productCount = Product.all.count
+
+    machines = Machine.all(:order => [ :created_at.desc ], :limit => 3)
+    machineCount = Machine.all.count
+
+    simulations = Simulation.all(:order => [ :created_at.desc ], :limit => 3)
+    simulationCount = Simulation.all.count
+
+    haml :index, :locals => { :subtitle => 'Overview', :products => products, :machines => machines, :simulations => simulations, :productCount => productCount, :machineCount => machineCount, :simulationCount => simulationCount }
   end
 
   # Custom methods

@@ -164,3 +164,53 @@ ul.infos li span.name{
   margin-top: 2px;
   text-align: center;
 }
+
+.row.overview{
+  margin-top: 40px;
+}
+
+.overview ul.actions{
+  float: left;
+  margin-top: 5px;
+  width: 165px;
+}
+
+.overview ul.actions li{
+  list-style-type: none;
+  clear: none;
+  float: left;  
+  margin-right: 10px;
+}
+
+.overview ul.records li{
+  list-style-type: none;
+  clear: none;
+  float: left;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.overview .model{
+  border-bottom: 1px solid #ededed;
+  clear: left;
+  float: left;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.overview .settings{
+  border-left: 1px solid #ededed;
+  height: 350px;
+  margin-left: 50px;
+  padding-left: 50px;
+}
+
+.overview .model h3{
+  float: left;
+  width: 180px;
+}
+
+.overview .model a{
+  float: left;
+}

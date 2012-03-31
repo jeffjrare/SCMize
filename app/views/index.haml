@@ -5,42 +5,49 @@
     %li
       %a{:href => "/#/running-simulation"} Running simulations
 
+.row.overview
+  .span5
+    .span5.model
+      %h3 Recent Products
+      %ul.actions
+        %li
+          %a{:href => '/products'} View all (#{productCount})
+        %li
+          %a{:href => '/products/new'} Create new
+      %ul.records
+        - products.each do |product|
+          %li
+            %strong= product.identifier
+            %p= product.name
 
-%section#typography
-  .page-header
-    %h1 Typography
-  / Headings & Paragraph Copy
-  .row
-    .span4
-      .well
-        %h1 h1. Heading 1
-        %h2 h2. Heading 2
-        %h3 h3. Heading 3
-        %h4 h4. Heading 4
-        %h5 h5. Heading 5
-        %h6 h6. Heading 6
-    .span4
-      %h3 Example body text
-      %p Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-      %p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.
-    .span4
-      %h3 Example addresses
-      %address
-        %strong Twitter, Inc.
-        %br
-          795 Folsom Ave, Suite 600
-          %br
-            San Francisco, CA 94107
-            %br
-              %abbr{:title => "Phone"} P:
-              (123) 456-7890
-      %address
-        %strong Full Name
-        %br
-          %a{:href => "mailto:#"} first.last@gmail.com
-/
-  Navbar
-  \==================================================
+    .span5.model
+      %h3 Recent Machines
+      %ul.actions
+        %li
+          %a{:href => '/machines'} View all (#{machineCount})
+        %li
+          %a{:href => '/machines/new'} Create new
+      %ul.records
+        - machines.each do |machine|
+          %li
+            %strong= machine.identifier
+            %p= machine.name
+
+    .span5.model
+      %h3 Recent Simulations
+      %ul.actions
+        %li
+          %a{:href => '/simulations'} View all (#{simulationCount})
+        %li
+          %a{:href => '/simulations/new'} Create new
+      %ul.records
+        - simulations.each do |simulation|
+          %li
+            %strong= simulation.identifier
+            %p= simulation.name
+  .span5.settings
+    %h3 Current settings
+
 %section#navbar
   .page-header
     %h1 Navbar
