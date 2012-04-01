@@ -6,8 +6,8 @@ class Simulation
   property :name,      String   
   property :created_at, DateTime
   
-  has 1, :machine
-  has 1, :product
+  belongs_to :machine, :key =>true
+  belongs_to :product, :key =>true
   
   def self.create_and_save properties
     simulation = Simulation.new  :name => properties[:name],

@@ -1,6 +1,6 @@
 %form.form-horizontal.well{:action => (product.new? ? "/products" : "/products/#{product.id}"), :method => 'post'}
   //=csrf_tag
-  %fieldset
+  %fieldset.span8
     %legend Let's define this new product!
     .control-group
       %label.control-label{:for => "product-name"} Name
@@ -15,11 +15,36 @@
     .control-group
       %label.control-label{:for => "product-type"} Purpose
       .controls
-        %select#product-type
-          %option Raw material
-          %option Component
-          %option Finished product
-          %option Other
+        %select#product-type{:name => 'product[type]'}
+          %option{:value => 'raw'} Raw material
+          %option{:value => 'component'} Component
+          %option{:value => 'finished'} Finished product
+          %option{:value => 'other'} Other
+
+    %legend Associate any product parts below
+    .control-group
+      .data-table
+        %ul.nav.nav-list
+          %li.nav-header
+            .data-cell 
+            .data-cell Identifier
+            .data-cell Name
+            .data-cell Qty
+            .data-cell Uom
+
+          - products.each do |product|
+            %li
+              %a{:href => "#!select"}
+                .data-cell.check-only
+                  %input{:type => 'checkbox'}
+                .data-cell= product.identifier
+                .data-cell= product.name
+                .data-cell
+                  %input.input-mini{:type => 'text'}
+                .data-cell
+                  %select.small
+                    - uoms.each do |uom|
+                      %option= uom.identifier
 
     .form-actions
       %button.btn.btn-primary{:type => "submit"} Save changes

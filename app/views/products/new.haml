@@ -6,4 +6,4 @@
       %a{:href => "/products/new"} Create a new product
 
       
-=haml(:'products/_form', :layout => false, :locals => {:product => product} )
+=haml(:'products/_form', :layout => false, :locals => {:product => product, :products => products, :uoms => uoms} )

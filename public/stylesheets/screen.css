@@ -214,3 +214,19 @@ ul.infos li span.name{
 .overview .model a{
   float: left;
 }
+
+.data-table .data-cell{
+  display: inline-block;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.data-table .data-cell.check-only{
+  width: 20px;
+}
+
+.data-table .nav-list li a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #83b0db;
+}
