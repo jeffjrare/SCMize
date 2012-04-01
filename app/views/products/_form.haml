@@ -26,25 +26,27 @@
       .data-table
         %ul.nav.nav-list
           %li.nav-header
-            .data-cell 
+            .data-cell.check-only
             .data-cell Identifier
             .data-cell Name
-            .data-cell Qty
-            .data-cell Uom
+            .data-cell Quantities
+            .data-cell Unit
 
-          - products.each do |product|
-            %li
+          - products.each do |part|
+            - bom = product.in_bom?(product.id, part.id)
+
+            %li{ :class => (bom ? 'active' : '') }
               %a{:href => "#!select"}
                 .data-cell.check-only
-                  %input{:type => 'checkbox'}
-                .data-cell= product.identifier
-                .data-cell= product.name
+                  %input{:type => 'checkbox', :name => 'product[parts][]', :value => part.id, :checked => bom }
+                .data-cell= part.identifier
+                .data-cell= part.name
                 .data-cell
-                  %input.input-mini{:type => 'text'}
+                  %input.input-mini{:type => 'text', :name => "product[partsQty][#{part.id}]", :value => (bom.quantities if bom)}
                 .data-cell
-                  %select.small
+                  %select.small{ :name => "product[partsUom][#{part.id}]" }
                     - uoms.each do |uom|
-                      %option= uom.identifier
+                      %option{ :selected => (true if bom and bom.uom == uom.identifier), :value => uom.identifier }= uom.name
 
     .form-actions
       %button.btn.btn-primary{:type => "submit"} Save changes

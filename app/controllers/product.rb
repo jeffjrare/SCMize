@@ -6,8 +6,9 @@ class Scmize < Sinatra::Application
   
   get '/products/new' do
     product = Product.new
-    products = Product.all
-    uoms = Uom.all
+    products = Product.all(:order => :identifier)
+    uoms = Uom.all(:order => :name)
+
     haml :'products/new', :locals => {:subtitle => 'Products - Create a new one', :product => product, :products => products, :uoms => uoms}
   end
   
@@ -18,8 +19,9 @@ class Scmize < Sinatra::Application
 
   get '/products/:id/edit' do |id|
     product = Product.first(:conditions => { :id => id })
-    products = Product.all(:conditions => ["id != #{id}"])
-    uoms = Uom.all
+    products = Product.all(:conditions => ["id != #{id}"], :order => :identifier)
+    uoms = Uom.all(:order => :name)
+
     haml :'products/edit', :locals => {:subtitle => 'Products - Edit', :product => product, :products => products, :uoms => uoms}
   end
 
