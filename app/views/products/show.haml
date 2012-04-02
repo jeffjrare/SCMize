@@ -28,4 +28,6 @@
     .crud.alert-actions
       %ul
         %li
-          %a{:href => "/products/#{product.id}/edit"} Modifier
+          %a.btn.btn-info{:href => "/products/#{product.id}/edit"} Edit properties
+        %li
+          %a.btn.btn-info{:href => "/products/#{product.id}/clone"} Clone into new

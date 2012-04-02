@@ -16,16 +16,23 @@
           %span.value=simulation.product.identifier
           %span.name product
         %li
-          %span.value Finished product
+          %span.value=simulation.product.type.capitalize
           %span.name Type  
-        %li
-          %span.value=simulation.created_at.to_s
-          %span.name downtime
-        %li
-          %span.value 96.64%
-          %span.name quality
 
     .crud.alert-actions
       %ul
         %li
-          %a{:href => "/simulations/#{simulation.id}/edit"} Modifier
+          %a.btn.btn-info{:href => "/simulations/#{simulation.id}/edit"} Edit properties
+        
+        %li
+          %a.btn.btn-info{:href => "/simulations/#{simulation.id}/clone"} Clone into new
+
+        %li.btn-group
+          %a.btn.btn-primary.dropdown-toggle{:"data-toggle" => 'dropdown'} 
+            Run...
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href=>"/simulations/#{simulation.id}/run-fasttrack"} Fast-track running!
+            %li
+              %a{:href=>"/simulations/#{simulation.id}/run-realtime"} Real-time running!

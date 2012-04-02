@@ -2,7 +2,7 @@
 ul.items{
   float: left;
   margin-left: 0;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 930px;
 }
 
@@ -12,12 +12,14 @@ ul.items li.item{
   float: left;
   list-style-type: none;
   min-height: 90px;
-  padding: 20px 10px 10px 0;
+  padding: 20px 10px 10px 4px;
   width: 100%;
 }
 
 ul.items li.item:hover{
   background: #f7f7f7;
+  border-left: 4px solid #323232;
+  padding-left: 0;
 }
 
 ul.items li.item .trigger{
@@ -81,6 +83,7 @@ ul.items div.crud{
   padding: 0;
 }
 
+/*
 ul.items div.crud .btn{
   font-weight: bold;
   float:left;
@@ -88,7 +91,7 @@ ul.items div.crud .btn{
   text-align: center;
   width: 75px;
 }
-
+*/
 ul.items div.crud ul li{
   clear: left;
   float: left;
@@ -229,4 +232,19 @@ ul.infos li span.name{
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: #6399cc;
+}
+
+.record-type-nav{
+  margin-top: 30px;
+}
+
+.record-type-nav{
+  float:left;
+  width: 600px;
+}
+
+.record-options.btn-group{
+  float:right;
+  margin-top: 35px;
+  width: 150px;
 }

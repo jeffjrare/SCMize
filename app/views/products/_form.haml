@@ -45,6 +45,7 @@
                   %input.input-mini{:type => 'text', :name => "product[partsQty][#{part.id}]", :value => (bom.quantities if bom)}
                 .data-cell
                   %select.small{ :name => "product[partsUom][#{part.id}]" }
+                    %option
                     - uoms.each do |uom|
                       %option{ :selected => (true if bom and bom.uom == uom.identifier), :value => uom.identifier }= uom.name
 

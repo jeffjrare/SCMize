@@ -7,6 +7,8 @@ class Product
   property :type,      String
   property :created_at, DateTime
 
+  has n, :simulations
+
   def self.create_and_save properties
     product = Product.create :name => properties[:name],
                              :identifier => properties[:identifier],
@@ -44,7 +46,7 @@ class Product
   def self.options_for field
     return case field 
       when 'type'
-       ['raw', 'finish', 'component']
+       ['raw', 'finished', 'component', 'other']
     end
   end
 

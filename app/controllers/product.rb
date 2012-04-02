@@ -1,7 +1,13 @@
 class Scmize < Sinatra::Application
   get '/products' do
     products = Product.all
-    haml :'products/index', :locals => {:subtitle => 'Products', :products => products}
+    stats = { :all => products.length }
+
+    Product.options_for('type').each do |type|
+      stats[type.to_sym] = Product.count(:conditions => { :type => type })
+    end
+
+    haml :'products/index', :locals => {:subtitle => 'Products', :products => products, :stats => stats}
   end
   
   get '/products/new' do

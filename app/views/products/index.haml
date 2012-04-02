@@ -6,6 +6,28 @@
       %a{:href => "/products/new"} Create a new product
 
 
+%ul.record-type-nav.nav.nav-pills
+  %li.active
+    %a{:href => '/#/products'} All (#{stats[:all]})
+  %li
+    %a{:href => '/#/products?type=finished'} Finished Product (#{stats[:finished]})
+  %li
+    %a{:href => '/#/products?type=raw'} Raw Material (#{stats[:raw]})
+  %li
+    %a{:href => '/#/products?type=component'} Component (#{stats[:component]})
+  %li
+    %a{:href => '/#/products?type=other'} Other (#{stats[:other]})
+
+.record-options.btn-group
+  %a.btn.dropdown-toggle{:"data-toggle" => 'dropdown'} 
+    Display options
+    %span.caret
+  %ul.dropdown-menu
+    %li
+      %a{:href=>'/#/products?bomDefined=1'} If BOM is defined
+    %li
+      %a{:href=>'/#/products?bomUndefined=1'} If BOM is empty 
+
 %ul.items
   - products.each do |product|
     = haml(:'products/show', :layout => false, :locals => {:product => product} )

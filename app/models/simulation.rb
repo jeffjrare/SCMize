@@ -4,8 +4,10 @@ class Simulation
   property :id,         Serial 
   property :identifier,      String 
   property :name,      String   
+  property :product_id, Integer
+  property :machine_id, Integer
   property :created_at, DateTime
-  
+
   belongs_to :machine, :key =>true
   belongs_to :product, :key =>true
   

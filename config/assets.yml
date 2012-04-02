@@ -1,8 +1,11 @@
 js:
   application:
+    - jquery-1.7.2.min.js
+    - bootstrap.js
 css:
   application:
     - reset.css
     - bootstrap.css
+    - bootstrap.custom.css
     - docs.css
     - screen.css
