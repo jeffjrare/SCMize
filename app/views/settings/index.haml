@@ -1,0 +1,15 @@
+.subnav
+  %ul.nav.nav-pills
+    %li{:class => (!page || page == 'company' ? 'active' : '')}
+      %a{:href => '/settings/company'} Company profile
+
+    %li{:class => (page == 'simulation-parameters' ? 'active' : '')}
+      %a{:href => '/settings/simulation-parameters'} Simulation parameters
+
+    %li{:class => (page == 'constants' ? 'active' : '')}
+      %a{:href => '/settings/constants'} Constants Definitions
+
+
+%section
+  .span3
+    =haml(('settings/_' + (!page ? 'company' : page)).to_sym, :layout => false)
