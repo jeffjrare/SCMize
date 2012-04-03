@@ -5,12 +5,12 @@
     .control-group
       %label.control-label{:for => "product-name"} Name
       .controls
-        %input#product-name.input-xlarge{:name => 'product[name]', :type => "text", :value => product.name}
+        %input#product-name.input-xlarge{:placeholder => product.placeholder(:name), :name => 'product[name]', :type => "text", :value => product.name}
           %p.help-block Provide a short name
     .control-group
       %label.control-label{:for => "product-identifier"} Identifier
       .controls
-        %input#product-identifier.input-xlarge{:name => 'product[identifier]', :type => "text", :value => product.identifier}
+        %input#product-identifier.input-xlarge{:placeholder => product.placeholder(:identifier), :name => 'product[identifier]', :type => "text", :value => product.identifier}
           %p.help-block Unique code maybe based upon a defined standard - as you wish!       
     .control-group
       %label.control-label{:for => "product-type"} Purpose
@@ -21,7 +21,7 @@
           %option{:value => 'finished'} Finished product
           %option{:value => 'other'} Other
 
-    %legend Associate any product parts below
+    %legend Associate any product parts below (Optional)
     .control-group
       .data-table
         %ul.nav.nav-list
@@ -48,6 +48,27 @@
                     %option
                     - uoms.each do |uom|
                       %option{ :selected => (true if bom and bom.uom == uom.identifier), :value => uom.identifier }= uom.name
+
+    %legend Which machines can handle it (and how they perform!) (Optional)
+    .control-group
+      .data-table
+        %ul.nav.nav-list
+          %li.nav-header
+            .data-cell.check-only
+            .data-cell Identifier
+            .data-cell Name
+            .data-cell.expand Speed ( unit value produced per one minute )
+
+          - machines.each do |machine|
+            - bom = nil
+            %li{ :class => (bom ? 'active' : '') }
+              %a{:href => "#!select"}
+                .data-cell.check-only
+                  %input{:type => 'checkbox', :name => 'product[machines][]', :value => machine.id, :checked => bom }
+                .data-cell= machine.identifier
+                .data-cell= machine.name
+                .data-cell.expand
+                  %input.input-mini{:placeholder => 'unit value', :type => 'text', :name => "product[machinesQty][#{machine.id}]", :value => (bom.quantities if bom)}
 
     .form-actions
       %button.btn.btn-primary{:type => "submit"} Save changes

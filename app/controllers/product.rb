@@ -13,9 +13,10 @@ class Scmize < Sinatra::Application
   get '/products/new' do
     product = Product.new
     products = Product.all(:order => :identifier)
+    machines = Machine.all
     uoms = Uom.all(:order => :name)
 
-    haml :'products/new', :locals => {:subtitle => 'Products - Create a new one', :product => product, :products => products, :uoms => uoms}
+    haml :'products/new', :locals => {:subtitle => 'Products - Create a new one', :product => product, :products => products, :machines => machines, :uoms => uoms}
   end
   
   post '/products' do
@@ -26,9 +27,10 @@ class Scmize < Sinatra::Application
   get '/products/:id/edit' do |id|
     product = Product.first(:conditions => { :id => id })
     products = Product.all(:conditions => ["id != #{id}"], :order => :identifier)
+    machines = Machine.all
     uoms = Uom.all(:order => :name)
 
-    haml :'products/edit', :locals => {:subtitle => 'Products - Edit', :product => product, :products => products, :uoms => uoms}
+    haml :'products/edit', :locals => {:subtitle => 'Products - Edit', :product => product, :products => products, :machines => machines, :uoms => uoms}
   end
 
   post '/products/:id' do |id|

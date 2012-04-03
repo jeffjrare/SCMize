@@ -7,37 +7,56 @@
 
 .row.overview
   .span5
+    %h3 Factory Overall Stats
+    %ul
+      %li
+        %span.name Quality
+        %span.value 99.78 %
+      %li
+        %span.name Downtime
+        %span.value 2.45 %
+      %li
+        %span.name Margin
+        %span.value 29.2 %
+  .span5
     .span5.model
-      %h3 Recent Products
+      %h3 #{productCount} Products
       %ul.actions
         %li
-          %a{:href => '/products'} View all (#{productCount})
+          %a{:href => '/products'} View all
         %li
           %a{:href => '/products/new'} Create new
       %ul.records
-        - products.each do |product|
-          %li
-            %strong= product.identifier
-            %p= product.name
+        %li
+          %strong 0
+          %p Finished
+        %li
+          %strong 0
+          %p Raw mat.
+        %li
+          %strong 0
+          %p Components
 
     .span5.model
-      %h3 Recent Machines
+      %h3 #{machineCount} Machines
       %ul.actions
         %li
-          %a{:href => '/machines'} View all (#{machineCount})
+          %a{:href => '/machines'} View all
         %li
           %a{:href => '/machines/new'} Create new
       %ul.records
-        - machines.each do |machine|
-          %li
-            %strong= machine.identifier
-            %p= machine.name
+        %li
+          %strong 0
+          %p Production
+        %li
+          %strong 0
+          %p Components
 
     .span5.model
-      %h3 Recent Simulations
+      %h3 #{simulationCount} Simulations
       %ul.actions
         %li
-          %a{:href => '/simulations'} View all (#{simulationCount})
+          %a{:href => '/simulations'} View all
         %li
           %a{:href => '/simulations/new'} Create new
       %ul.records
@@ -45,8 +64,6 @@
           %li
             %strong= simulation.identifier
             %p= simulation.name
-  .span5.settings
-    %h3 Current settings
 
 %section#navbar
   .page-header

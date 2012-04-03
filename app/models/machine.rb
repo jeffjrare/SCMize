@@ -14,4 +14,10 @@ class Machine
     machine
   end
 
+  def placeholder field
+    return case field.to_sym
+      when :identifier
+        'Ex: LNG00A29'
+    end
+  end
 end

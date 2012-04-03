@@ -10,11 +10,8 @@
 
       %ul.infos
         %li
-          %span.value 1 year
-          %span.name aging
-        %li
-          %span.value $12500
-          %span.name maintenance/year
+          %span.value 0
+          %span.name products handled      
         %li
           %span.value 4
           %span.name workforce          
@@ -24,8 +21,16 @@
         %li
           %span.value 96.64%
           %span.name quality
+        %li
+          %span.value $12500
+          %span.name maintenance/year
+        %li
+          %span.value 1 year
+          %span.name aging
 
     .crud.alert-actions
       %ul
         %li
-          %a{:href => "/machines/#{machine.id}/edit"} Edit properties
+          %a.btn.btn-info{:href => "/machines/#{machine.id}/edit"} Edit properties
+        %li
+          %a.btn.btn-info{:href => "/machines/#{machine.id}/clone"} Clone into new
