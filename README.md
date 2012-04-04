@@ -26,6 +26,7 @@ Application wrapped into a Ruby Sinatra framework, organized as MVC. This is too
 
 ### Todos
 - Integrate simulation engine  
+- Have a useful dashboard page (Display something interesting!)
 - Fill the custom settings page  
 - Be able to create account and company  
 

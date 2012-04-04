@@ -10,7 +10,7 @@ class Scmize < Sinatra::Application
 
   set :app_file, __FILE__
   set :haml, :layout => :'layouts/app'
-  set :raise_errors, false if production?
+  set :raise_errors, false
   set :root, Pathname.new(File.dirname(__FILE__)).parent.to_s
   set :title, 'Scmize'
   set :views, Proc.new { File.join(root, "app/views") }
@@ -24,10 +24,12 @@ class Scmize < Sinatra::Application
   set :css_url,  '/stylesheets'
 
   configure :development do |config|
-    use Sinatra::ShowExceptions
     register Sinatra::Reloader
     config.also_reload "app/controllers/*.rb"
     config.also_reload "app/models/*.rb"
+    set :logging, true
+    set :dump_errors, true
+    set :show_exceptions, true
 
     #use Rack::Session::Cookie, :secret => "25CCEAE5083C4919DA44FACE551B336B931E5FBFC376A550E825767C1B1EBDB0"
     #use Rack::Csrf, :raise => true

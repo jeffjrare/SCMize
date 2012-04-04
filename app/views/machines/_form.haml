@@ -12,8 +12,40 @@
       .controls
         %input#machine-identifier.input-xlarge{:placeholder => machine.placeholder(:identifier), :name => 'machine[identifier]', :type => "text", :value => machine.identifier}
           %p.help-block Unique code maybe based upon a defined standard - as you wish!       
+
     .control-group
-      %label.control-label{:for => "machine-type"} Purpose
+      %label.control-label{:for => "machine-labor"} Labor
+      .controls
+        %input#machine-labor.input-mini{:placeholder => machine.placeholder(:labor), :name => 'machine[labor]', :type => "text", :value => machine.labor}
+          %p.help-block How many person are usually required to run the machine?
+
+    .control-group
+      %label.control-label{:for => "machine-labor-rate"} $ Hourly Rate
+      .controls
+        %input#machine-labor.input-mini{:placeholder => machine.placeholder(:labor_hourly_rate), :name => 'machine[labor_hourly_rate]', :type => "text", :value => machine.labor_hourly_rate}
+          %p.help-block Approximative hourly rate salaries per employee working on the machine
+
+
+    .control-group
+      %label.control-label{:for => "machine-maintenance-cost"} $ Maintenance
+      .controls
+        %input#machine-maintenance-cost.input-mini{:placeholder => machine.placeholder(:maintenance_cost), :name => 'machine[maintenance_cost]', :type => "text", :value => machine.maintenance_cost}
+          %p.help-block Approximative maintenance cost
+
+    .control-group
+      %label.control-label{:for => "machine-maintenance-time"} Maintenance Time
+      .controls
+        %input#machine-maintenance.input-mini{:placeholder => machine.placeholder(:maintenance_time), :name => 'machine[maintenance_time]', :type => "text", :value => machine.maintenance_time}
+          %p.help-block Approximative maintenance <strong>hours</strong> required
+
+    .control-group
+      %label.control-label{:for => "machine-setup"} Base Setup Time
+      .controls
+        %input#machine-setup.input-mini{:placeholder => machine.placeholder(:base_setup_time), :name => 'machine[base_setup_time]', :type => "text", :value => machine.base_setup_time}
+          %p.help-block Base setup <strong>minutes</strong> required on a new production startup
+
+    .control-group
+      %label.control-label{:for => "machine-type"} Main Purpose
       .controls
         %select#machine-type
           %option Primary production equipment
