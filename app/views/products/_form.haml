@@ -1,5 +1,5 @@
 %form.form-horizontal.well{:action => (product.new? ? "/products" : "/products/#{product.id}"), :method => 'post'}
-  //=csrf_tag
+  =csrf_tag
   %fieldset.span8
     %legend Let's define this new product!
     .control-group

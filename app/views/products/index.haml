@@ -20,14 +20,45 @@
 
 .record-options.btn-group
   %a.btn.dropdown-toggle{:"data-toggle" => 'dropdown'} 
-    Display options
+    Filtering options
     %span.caret
   %ul.dropdown-menu
     %li
-      %a{:href=>'/#/products?bomDefined=1'} If BOM is defined
+      %a{:href=>'/products?filtering=withBom'} 
+        %i{:class => (@productFiltering == 'withBom' ? 'icon-ok' : 'spaced')}
+        Products with BOM
     %li
-      %a{:href=>'/#/products?bomUndefined=1'} If BOM is empty 
+      %a{:href=>'/products?filtering=withoutBom'}
+        %i{:class => (@productFiltering == 'withoutBom' ? 'icon-ok' : 'spaced')}
+        Products without BOM
 
-%ul.items
-  - products.each do |product|
-    = haml(:'products/show', :layout => false, :locals => {:product => product} )
+.record-options.btn-group
+  %a.btn.dropdown-toggle{:"data-toggle" => 'dropdown'} 
+    Display options
+    %span.caret
+  %ul.dropdown-menu
+    %li{:class => (@productView != 'tabular' ? 'active' : '')}
+      %a{:href=>'/products?view=detailled'} Detailled view
+    %li{:class => (@productView == 'tabular' ? 'active' : '')}
+      %a{:href=>'/products?view=tabular'} Tabular view
+
+- if @productView != 'tabular'
+  %ul.items
+    - products.each do |product|
+      = haml(:'products/show', :layout => false, :locals => {:product => product} )
+
+- else
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Identifier
+        %th Name
+    %tbody
+    - products.each do |product|
+      %tr
+        %td= product.identifier
+        %td= product.name
+        %td
+          %a.btn.btn-info{:href => "/products/#{product.id}/edit"} Edit properties
+          %a.btn.post-action.btn-info{:href => "/products/#{product.id}/clone"} Clone into new
+          %a.delete-action.btn.btn-danger{:href => "/products/#{product.id}"} Delete

@@ -8,9 +8,9 @@ class Simulation
   property :machine_id, Integer
   property :created_at, DateTime
 
-  belongs_to :machine, :key =>true
-  belongs_to :product, :key =>true
-  
+  belongs_to :machine
+  belongs_to :product
+
   def self.create_and_save properties
     simulation = Simulation.new  :name => properties[:name],
                                  :identifier => properties[:identifier]

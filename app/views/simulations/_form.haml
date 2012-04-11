@@ -1,5 +1,5 @@
 %form.form-horizontal.well{:action => (simulation.new? ? "/simulations" : "/simulations/#{simulation.id}"), :method => 'post'}
-  //=csrf_tag
+  =csrf_tag
   %fieldset
     %legend Let's define this new simulation!
     .control-group

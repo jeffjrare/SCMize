@@ -263,3 +263,19 @@ ul.infos li span.name{
   color: #4183C4;
   font-weight: bold;
 }
+
+.container .subnav{
+  width:940px;
+}
+
+.container .subnav.subnav-fixed{
+  left: 292px;
+}
+
+.container .subnav.subnav-fixed ul{
+  border-top: none;
+}
+
+i.spaced{
+  padding: 9px; 
+}

@@ -33,4 +33,6 @@
         %li
           %a.btn.btn-info{:href => "/machines/#{machine.id}/edit"} Edit properties
         %li
-          %a.btn.btn-info{:href => "/machines/#{machine.id}/clone"} Clone into new
+          %a.btn.post-action.btn-info{:href => "/machines/#{machine.id}/clone"} Clone into new
+        %li
+          %a.btn.delete-action.btn-danger{:href => "/machines/#{machine.id}"} Delete

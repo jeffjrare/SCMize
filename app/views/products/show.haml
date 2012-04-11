@@ -24,4 +24,6 @@
         %li
           %a.btn.btn-info{:href => "/products/#{product.id}/edit"} Edit properties
         %li
-          %a.btn.btn-info{:href => "/products/#{product.id}/clone"} Clone into new
+          %a.btn.post-action.btn-info{:href => "/products/#{product.id}/clone"} Clone into new
+        %li
+          %a.delete-action.btn.btn-danger{:href => "/products/#{product.id}"} Delete

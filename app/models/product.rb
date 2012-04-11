@@ -8,6 +8,8 @@ class Product
   property :created_at, DateTime
 
   has n, :simulations
+  #has n, :parts, :through => :products, :child_key => :part_product_id
+  has n, :boms, :child_key => [ :parent_product_id ]
 
   def self.create_and_save properties
     product = Product.create :name => properties[:name],
@@ -23,6 +25,16 @@ class Product
     end
 
     product
+  end
+
+  def self.clone id
+    product = Product.first(:conditions => { :id => id })
+
+    productCloned = Product.create :name => "#{product.name} (Cloned)",
+                                   :identifier => "#{product.identifier}-CLONED",
+                                   :type => product.type
+
+    productCloned
   end
 
   def self.update_and_save id, properties

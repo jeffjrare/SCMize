@@ -1,4 +1,6 @@
 class Scmize < Sinatra::Application
+  use Rack::MethodOverride
+
   get '/machines' do
     machines = Machine.all
     haml :'machines/index', :locals => {:subtitle => 'Machines', :machines => machines}
@@ -14,10 +16,19 @@ class Scmize < Sinatra::Application
     redirect to('/machines')
   end
 
+  post '/machines/:id/clone' do |id|
+    machine = Machine.clone(id)
+    redirect to("/machines/#{machine.id}/edit")
+  end
+
   get '/machines/:id/edit' do |id|
     machine = Machine.first(:conditions => { :id => id })
-
     haml :'machines/edit', :locals => {:subtitle => 'Machines - Edit', :machine => machine}
+  end
+
+  delete '/machines/:id' do |id|
+    machine = Machine.first(:conditions => { :id => id }).destroy
+    redirect to('/machines')
   end
 
   post '/machines/:id' do |id|
