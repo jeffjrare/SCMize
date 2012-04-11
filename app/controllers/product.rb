@@ -1,6 +1,5 @@
 class Scmize < Sinatra::Application
   before do
-    raise request.inspect
     _handleFilter
   end
 
@@ -54,10 +53,10 @@ class Scmize < Sinatra::Application
   end
 
   def _handleFilter
-    Sinatra::AppSession::Filtering.set :product, params[:filtering] if params[:filtering]
-    Sinatra::AppSession::View.set :product, params[:view] if params[:view]
+    Sinatra::AppSession.filtering.set :product, :bom, params[:filtering] if params[:filtering]
+    Sinatra::AppSession.view.set :product, :index, params[:view] if params[:view]
 
-    @productView = Sinatra::AppSession::View.get :product
-    @productFiltering = Sinatra::AppSession::Filtering.get :product
+    @productView = Sinatra::AppSession.view.get :product, :index
+    @productFiltering = Sinatra::AppSession.filtering.get :product, :bom
   end
 end
